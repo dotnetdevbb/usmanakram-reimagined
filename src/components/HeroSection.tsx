@@ -61,8 +61,8 @@ export const HeroSection = () => {
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 3}s`,
+                animationDelay: `${Math.random() * 6}s`,
+                animationDuration: `${6 + Math.random() * 6}s`,
               }}
             />
           ))}
@@ -78,7 +78,11 @@ export const HeroSection = () => {
 
         <div
           className="animate-fade-up"
-          style={{ animationDelay: '0.4s', opacity: 0 }}
+          style={{
+            animationDelay: '0.8s',
+            animationDuration: '0.8s',
+            opacity: 0
+             }}
         >
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-2">
             I am a{' '}

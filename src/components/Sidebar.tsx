@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Linkedin, Github, Facebook, Twitter } from 'lucide-react';
+import { Menu, X, Linkedin, Github, Facebook, Twitter, Home, Briefcase, Award, Mail } from 'lucide-react';
 
 const navItems = [
-  { label: 'HOME', href: '#home' },
-  { label: 'WHAT I DO', href: '#services' },
-  { label: 'EXPERIENCE', href: '#experience' },
-  { label: 'CONTACTS', href: '#contacts' },
+  { label: 'HOME', href: '#home', icon: Home },
+  { label: 'WHAT I DO', href: '#services', icon: Briefcase },
+  { label: 'EXPERIENCE', href: '#experience', icon: Award },
+  { label: 'CONTACTS', href: '#contacts', icon: Mail },
 ];
 
 const socialLinks = [
@@ -74,7 +74,7 @@ export const Sidebar = () => {
           {/* Profile Image */}
           <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary mb-4">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+              src="https://jannat.dev/wp-content/themes/inbio/assets/images/logo/logo.png"
               alt="Usman Akram"
               className="w-full h-full object-cover"
             />
@@ -85,12 +85,13 @@ export const Sidebar = () => {
             <button
               key={item.href}
               onClick={() => handleNavClick(item.href)}
-              className={`text-lg font-medium ${
+              className={`flex items-center gap-3 text-lg font-medium ${
                 activeSection === item.href.slice(1)
                   ? 'text-primary'
                   : 'text-foreground hover:text-primary'
               } transition-colors`}
             >
+              <item.icon size={24} />
               {item.label}
             </button>
           ))}
@@ -119,7 +120,7 @@ export const Sidebar = () => {
         <div className="flex flex-col items-center mb-10">
           <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-primary mb-6">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+              src="https://jannat.dev/wp-content/themes/inbio/assets/images/logo/logo.png"
               alt="Usman Akram"
               className="w-full h-full object-cover"
             />
@@ -128,16 +129,19 @@ export const Sidebar = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="flex flex-col items-center gap-6 mb-auto">
+        <nav className="flex flex-col gap-6 mb-auto w-full px-4">
           {navItems.map((item) => (
             <button
               key={item.href}
               onClick={() => handleNavClick(item.href)}
-              className={`sidebar-nav-link ${
-                activeSection === item.href.slice(1) ? 'sidebar-nav-link-active' : ''
+              className={`flex items-center gap-4 px-4 py-3 rounded-lg transition-all ${
+                activeSection === item.href.slice(1)
+                  ? 'bg-primary text-primary-foreground'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
               }`}
             >
-              {item.label}
+              <item.icon size={24} />
+              <span className="font-medium">{item.label}</span>
             </button>
           ))}
         </nav>

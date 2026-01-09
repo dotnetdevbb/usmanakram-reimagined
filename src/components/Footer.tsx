@@ -10,9 +10,7 @@ export const Footer = () => {
           <p className="text-muted-foreground text-center md:text-left">
             © {currentYear} Usman Akram. All Rights Reserved.
           </p>
-          <p className="text-muted-foreground flex items-center gap-2">
-            Made with <Heart className="w-4 h-4 text-primary fill-primary" /> in Manchester, UK
-          </p>
+          
         </div>
       </div>
     </footer>

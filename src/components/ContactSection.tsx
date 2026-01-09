@@ -6,8 +6,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'usman@jannat.dev',
-    href: 'mailto:usman@jannat.dev',
+    value: 'usmanakram@gmail.com',
+    href: 'mailto:usmanakram@gmail.com',
   },
   {
     icon: Phone,
@@ -33,6 +33,11 @@ const socialLinks = [
     icon: Github,
     label: 'GitHub',
     href: 'https://github.com/',
+  },
+    {
+    icon: Mail,
+    label: 'Email',
+    href: 'https://gmail.com/',
   },
 ];
 
@@ -87,7 +92,7 @@ export const ContactSection = () => {
           <div>
             <div className="bg-card rounded-2xl p-8 mb-8">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+                src="https://jannat.dev/wp-content/uploads/2021/08/contact1.png"
                 alt="Usman Akram"
                 className="w-full h-64 object-cover rounded-xl mb-6"
               />
