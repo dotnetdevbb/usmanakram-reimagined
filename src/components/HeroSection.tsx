@@ -6,10 +6,10 @@ import heroBg from '@/assets/hero-bg.png';
 const roles = [
   'Developer.',
   'Professional Coder.',
-  '.NET Full Stack Developer',
-  'Web Developer',
-  'Mobile App Developer',
-  'Desktop App Developer',
+  '.NET Full Stack Developer.',
+  'Web Developer.',
+  'Mobile App Developer.',
+  'Desktop App Developer.',
 ];
 
 export const HeroSection = () => {
