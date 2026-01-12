@@ -47,7 +47,6 @@ export const ParticleBackground = () => {
 
       const particles = particlesRef.current;
       const mouse = mouseRef.current;
-      const connectionDistance = 120;
       const mouseRadius = 100;
 
       // Update and draw particles
@@ -76,29 +75,11 @@ export const ParticleBackground = () => {
         if (p.y < 0) p.y = canvas.height;
         if (p.y > canvas.height) p.y = 0;
 
-        // Draw particle
+        // Draw particle (white dot only)
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
         ctx.fill();
-
-        // Draw connections
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const dx2 = p.x - p2.x;
-          const dy2 = p.y - p2.y;
-          const distance = Math.sqrt(dx2 * dx2 + dy2 * dy2);
-
-          if (distance < connectionDistance) {
-            const opacity = (1 - distance / connectionDistance) * 0.3;
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
       }
 
       animationRef.current = requestAnimationFrame(drawParticles);
